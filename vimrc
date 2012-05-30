@@ -139,6 +139,18 @@ let g:Tlist_Enable_Fold_Column = 0
 " only show contents of the current file in current tab
 let g:Tlist_Show_One_File = 1
 
+" weird, my computer crashed and after restarting it would no longer 
+" generate the tags. it'd say 
+" Taglist: Failed to generate tags for /my/path/to/file
+"   ctags: illegal option -- -^@usage: ctags [-BFadtuwvx] [-f tagsfile] file ...
+" Taglist FAQ says this is coz its not using the exuberant ctags file.
+" if i type ctags in shell it gets exuberant one...
+" but anyway i recently installed oh-my-zsh, which might be somehow the 
+" problem.  setting the following var fixes the prob
+" This seems to be about this problem (though I didn't it all):
+" http://vim.1045645.n5.nabble.com/MacVim-and-PATH-td3388705.html
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+
 " C-s saves and updates tagslist 
 nnoremap <silent> <C-s> :silent w<BAR>:silent TlistUpdate<CR>
 inoremap <silent> <C-s> <C-o>:silent w<CR><ESC>:silent TlistUpdate<CR>
