@@ -382,3 +382,6 @@ autocmd FileType txt set fo+=a
 " separated by a linebreak.
 autocmd FileType txt set formatoptions+=w
 
+set hidden
+set switchbuf=useopen,usetab
+
