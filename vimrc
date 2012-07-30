@@ -385,3 +385,4 @@ autocmd FileType txt set formatoptions+=w
 set hidden
 set switchbuf=useopen,usetab
 
+set tabpagemax=35
